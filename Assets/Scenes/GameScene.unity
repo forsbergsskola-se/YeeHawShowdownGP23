@@ -3268,7 +3268,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   damage: 0
-  agent: {fileID: 0}
 --- !u!1001 &812776386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8981,5 +8980,5 @@ SceneRoots:
   - {fileID: 322209798}
   - {fileID: 1852286493}
   - {fileID: 1559859952}
-  - {fileID: 808195632}
   - {fileID: 319820941}
+  - {fileID: 808195632}
