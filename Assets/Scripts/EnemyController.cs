@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     public float health;
+    public float damage;
+    public NavMeshAgent agent;
     
     // Start is called before the first frame update
     void Start()
