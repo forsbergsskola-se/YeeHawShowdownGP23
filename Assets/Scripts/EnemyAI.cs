@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
 
-
 public class EnemyAI : MonoBehaviour
 {
     public float walkDistance = 5f;  // Distance to walk before turning
@@ -12,36 +11,36 @@ public class EnemyAI : MonoBehaviour
     private Vector3 _startPosition;   // Store the start position to calculate distance walked
     private bool _walkingAway = true; // Is the enemy still walking away from the player?
     private bool _hasShot = false;    // To prevent the enemy from shooting more than once
-    public Transform player;         // Reference to the player's position
+    public Transform player;          // Reference to the player's position
 
-    public UnityEvent onSignalEvent; // Triggered when the sound signal goes off
+    public UnityEvent onSignalEvent;  // Triggered when the sound signal goes off
 
     private void Start()
     {
         _startPosition = transform.position;
+        // Start walking directly
+        _walkingAway = true;
     }
 
     private void Update()
     {
-        
+        // If still walking and not yet reached walk distance
         if (_walkingAway && Vector3.Distance(_startPosition, transform.position) < walkDistance)
         {
             transform.Translate(Vector3.forward * Time.deltaTime);  // Move forward
         }
-        else if (_walkingAway)
-        {
-            // Stop walking and prepare to turn and shoot
-            _walkingAway = false;
-            onSignalEvent.Invoke();  // Trigger the event when walking is done
-        }
     }
 
-    // This method is called when the signal event happens
+    // Triggered by the sound signal event
     public void TurnAndShoot()
     {
-        if (!_hasShot)
+        if (_walkingAway)
         {
-            StartCoroutine(TurnAndShootCoroutine());
+            _walkingAway = false;  // Stop walking
+            if (!_hasShot)
+            {
+                StartCoroutine(TurnAndShootCoroutine());
+            }
         }
     }
 
@@ -62,16 +61,14 @@ public class EnemyAI : MonoBehaviour
         ShootWithError();
     }
 
-    private void ShootWithError() // so it's not prefect and wins everytime
+    private void ShootWithError() 
     {
-        
         Vector3 aimError = new Vector3(Random.Range(-accuracyOffset, accuracyOffset), Random.Range(-accuracyOffset, accuracyOffset), 0);
-
-        
         Vector3 fireDirection = (player.position + aimError - transform.position).normalized;
-        
+
         GetComponent<Gun>().EnemyShoot(fireDirection);
 
         _hasShot = true; 
     }
 }
+

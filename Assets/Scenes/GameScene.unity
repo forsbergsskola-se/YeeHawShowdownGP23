@@ -4324,9 +4324,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 808195633}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36bd4c36cdd084a99afaf3f06bb90e4f, type: 3}
+  m_Script: {fileID: 11500000, guid: e2a264487e7bd42d2af2f7be00badcbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkDistance: 5
+  turnSpeed: 5
+  accuracyOffset: 1.5
+  player: {fileID: 1852286493}
+  onSignalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 808195634}
+        m_TargetAssemblyTypeName: EnemyAI, Assembly-CSharp
+        m_MethodName: TurnAndShoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &810756089
 GameObject:
   m_ObjectHideFlags: 0
