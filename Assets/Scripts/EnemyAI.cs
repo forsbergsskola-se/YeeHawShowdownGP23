@@ -4,7 +4,7 @@ using System.Collections;
 
 public class EnemyAI : MonoBehaviour
 {
-    public float walkDistance = 5f;  // Distance to walk before turning
+    public float walkspeed = 2f;
     public float turnSpeed = 5f;     // How fast the enemy turns
     public float accuracyOffset = 1.5f;  // How much error is added to the enemy's aim
 
@@ -15,19 +15,22 @@ public class EnemyAI : MonoBehaviour
 
     public UnityEvent onSignalEvent;  // Triggered when the sound signal goes off
 
+    private Animator animator;
     private void Start()
     {
-        _startPosition = transform.position;
+        animator = GetComponent<Animator>();
+        
         // Start walking directly
         _walkingAway = true;
+        animator.SetBool("isWalking", true);
     }
 
     private void Update()
     {
         // If still walking and not yet reached walk distance
-        if (_walkingAway && Vector3.Distance(_startPosition, transform.position) < walkDistance)
+        if (_walkingAway)
         {
-            transform.Translate(Vector3.forward * Time.deltaTime);  // Move forward
+            transform.Translate(Vector3.forward * walkspeed * Time.deltaTime);  // Move forward
         }
     }
 

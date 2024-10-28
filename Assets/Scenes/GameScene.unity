@@ -4258,6 +4258,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 266573609337403064, guid: ba2e5d86148740648bda209e2fb8e3ec, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7ef08c191ad654cf590ad5c8f4d13bf8, type: 2}
     - target: {fileID: 3698605842638305650, guid: ba2e5d86148740648bda209e2fb8e3ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.0798302
@@ -4327,7 +4331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a264487e7bd42d2af2f7be00badcbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkDistance: 5
+  walkspeed: 0.2
   turnSpeed: 5
   accuracyOffset: 1.5
   player: {fileID: 1852286493}
