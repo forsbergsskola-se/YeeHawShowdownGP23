@@ -14,14 +14,7 @@ public class Gun : MonoBehaviour
         hasFired = false;
     }
 
-    void Update()
-    {
-        // Check if the player presses the fire button (or if AI triggers it) and if the gun hasn't fired yet
-        if (Input.GetButtonDown("Fire1") && !hasFired)
-        {
-            PlayerShoot();  // Call the Shoot function if conditions are met
-        }
-    }
+
     
     
     public void PlayerShoot()
@@ -33,6 +26,8 @@ public class Gun : MonoBehaviour
         Rigidbody rb = bullet.GetComponent<Rigidbody>();  // Get the Rigidbody component of the bullet
 
         rb.AddForce(firePoint.forward * bulletForce, ForceMode.Impulse);  // Fire in the forward direction
+        
+        Debug.Log("Shooting!");
     }
 
     // Enemy shoot method (fires in a specific direction)
