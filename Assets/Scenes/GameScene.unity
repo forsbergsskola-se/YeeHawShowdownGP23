@@ -2227,91 +2227,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 610584259}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &408422646
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2240370108792922466, guid: 886849bcd8e0f47ac91b01182b77253c, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2240370108792922466, guid: 886849bcd8e0f47ac91b01182b77253c, type: 3}
-      propertyPath: lengthInSec
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2240370108792922466, guid: 886849bcd8e0f47ac91b01182b77253c, type: 3}
-      propertyPath: ShapeModule.angle
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 2240370108792922466, guid: 886849bcd8e0f47ac91b01182b77253c, type: 3}
-      propertyPath: InitialModule.size3D
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2240370108792922466, guid: 886849bcd8e0f47ac91b01182b77253c, type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2240370108792922466, guid: 886849bcd8e0f47ac91b01182b77253c, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2240370108792922466, guid: 886849bcd8e0f47ac91b01182b77253c, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747201338436646993, guid: 886849bcd8e0f47ac91b01182b77253c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747201338436646993, guid: 886849bcd8e0f47ac91b01182b77253c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.007
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747201338436646993, guid: 886849bcd8e0f47ac91b01182b77253c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747201338436646993, guid: 886849bcd8e0f47ac91b01182b77253c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747201338436646993, guid: 886849bcd8e0f47ac91b01182b77253c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747201338436646993, guid: 886849bcd8e0f47ac91b01182b77253c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747201338436646993, guid: 886849bcd8e0f47ac91b01182b77253c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747201338436646993, guid: 886849bcd8e0f47ac91b01182b77253c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747201338436646993, guid: 886849bcd8e0f47ac91b01182b77253c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747201338436646993, guid: 886849bcd8e0f47ac91b01182b77253c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6368708727723742021, guid: 886849bcd8e0f47ac91b01182b77253c, type: 3}
-      propertyPath: m_Name
-      value: GunSmoke
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 886849bcd8e0f47ac91b01182b77253c, type: 3}
 --- !u!1 &420276929
 GameObject:
   m_ObjectHideFlags: 0
@@ -4405,9 +4320,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 808195633}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36bd4c36cdd084a99afaf3f06bb90e4f, type: 3}
+  m_Script: {fileID: 11500000, guid: e2a264487e7bd42d2af2f7be00badcbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkDistance: 5
+  turnSpeed: 5
+  accuracyOffset: 1.5
+  player: {fileID: 1852286493}
+  onSignalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 808195634}
+        m_TargetAssemblyTypeName: EnemyAI, Assembly-CSharp
+        m_MethodName: TurnAndShoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &810756089
 GameObject:
   m_ObjectHideFlags: 0
@@ -25733,4 +25667,3 @@ SceneRoots:
   - {fileID: 319820941}
   - {fileID: 808195632}
   - {fileID: 1303432774}
-  - {fileID: 408422646}
