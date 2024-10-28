@@ -20,9 +20,9 @@ public class Gun : MonoBehaviour
     
     public void PlayerShoot()
     {
-        if (hasFired) return;  // Prevent shooting if already fired
+        //if (hasFired) return;  // Prevent shooting if already fired
 
-        hasFired = true;  // Mark the gun as having fired
+        //hasFired = true;  // Mark the gun as having fired
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);  // Create the bullet
         Rigidbody rb = bullet.GetComponent<Rigidbody>();  // Get the Rigidbody component of the bullet
 
