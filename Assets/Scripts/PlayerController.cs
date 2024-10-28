@@ -1,26 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     private Gun gun;
+    [SerializeField] public float speed = 1.0f;
+    [SerializeField] private bool pressYaw;
 
-    void Start()
-    {
-        // Get the Gun component attached to the player’s hand
-        gun = GetComponentInChildren<Gun>();  // Assuming the gun is a child of the player
-    }
-
+    
+    
     void Update()
     {
-        // Check if the player presses the fire button (VR controller input mapped to Fire1)
-        if (Input.GetButtonDown("Fire1") && !gun.hasFired)
-        {
-            gun.PlayerShoot();  // Call the player-specific shoot method
-        }
+        Vector2 axis = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
+        transform.Translate(new Vector3(axis.x,0, axis.y) * speed * Time.deltaTime);
     }
+    
 }
 
