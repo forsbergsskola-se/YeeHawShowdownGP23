@@ -422,6 +422,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 183844, guid: c6a5af2ca13ceb043a1375ffd988f43e, type: 3}
   firePoint: {fileID: 8246494130303677982}
   bulletForce: 20
+  particles: {fileID: 0}
   hasFired: 0
 --- !u!1 &3475309007763966048
 GameObject:
@@ -447,13 +448,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3475309007763966048}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0002, y: 0.0053, z: 0.144}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.00020003319, y: 0.005300045, z: 0.14399996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1516040525776304505}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &5105192212609305075
 GameObject:
   m_ObjectHideFlags: 0
