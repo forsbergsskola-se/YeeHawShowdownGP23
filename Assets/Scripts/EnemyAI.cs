@@ -4,21 +4,20 @@ using System.Collections;
 
 public class EnemyAI : MonoBehaviour
 {
-    public float walkspeed = 2f;
+    public float walkspeed;
     public float turnSpeed = 5f;     // How fast the enemy turns
     public float accuracyOffset = 1.5f;  // How much error is added to the enemy's aim
-
-    private Vector3 _startPosition;   // Store the start position to calculate distance walked
-    private bool _walkingAway = true; // Is the enemy still walking away from the player?
-    private bool _hasShot = false;    // To prevent the enemy from shooting more than once
-    public Transform player;          // Reference to the player's position
-
-    public UnityEvent onSignalEvent;  // Triggered when the sound signal goes off
-
+    public AudioSource audioSource;
+    private Vector3 _startPosition;   
+    private bool _walkingAway = true; 
+    private bool _hasShot = false;    
+    public Transform player;          
+    
     private Animator animator;
     private void Start()
     {
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         
         // Start walking directly
         _walkingAway = true;
@@ -31,8 +30,17 @@ public class EnemyAI : MonoBehaviour
         if (_walkingAway)
         {
             transform.Translate(Vector3.forward * walkspeed * Time.deltaTime);  // Move forward
+            // Adjust pitch based on walk speed
+            audioSource.pitch = walkspeed / 2.0f;  // Adjust this divisor to control sensitivity
         }
+        else
+        {
+            audioSource.pitch = 1.0f;  // Reset to normal pitch when not walking
+        }
+        
     }
+   
+
 
     // Triggered by the sound signal event
     public void TurnAndShoot()
