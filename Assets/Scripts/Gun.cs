@@ -20,17 +20,24 @@ public class Gun : MonoBehaviour
     
     public void PlayerShoot()
     {
-        if (hasFired) return;  // Prevent shooting if already fired
-
+        // if (hasFired) return;
+        
         hasFired = true;  // Mark the gun as having fired
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);  // Create the bullet
-        Rigidbody rb = bullet.GetComponent<Rigidbody>();  // Get the Rigidbody component of the bullet
 
-        rb.AddForce(firePoint.forward * bulletForce, ForceMode.Impulse);  // Fire in the forward direction
+        // Create the bullet with a 90-degree rotation offset around the X-axis
+        Quaternion adjustedRotation = firePoint.rotation * Quaternion.Euler(90, 0, 0);
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, adjustedRotation);
+
+        // Apply force to the bullet in the forward direction
+        bullet.GetComponent<Rigidbody>().AddForce(firePoint.forward * bulletForce, ForceMode.Impulse);
+
+        // Play the particle effect at the fire point
+        particles.transform.position = firePoint.position;
         particles.Play();
 
         Debug.Log("Shooting!");
     }
+
 
 
     // Enemy shoot method (fires in a specific direction)

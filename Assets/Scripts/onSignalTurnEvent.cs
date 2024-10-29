@@ -22,7 +22,7 @@ public class OnSignalTurnEvent : MonoBehaviour
     {
         while (true)
         {
-            float delay = Random.Range(3f, 5f);
+            yield return new WaitForSeconds(Random.Range(3f, 5f));
 
             if (signalSound != null && audioSource != null)
             {
