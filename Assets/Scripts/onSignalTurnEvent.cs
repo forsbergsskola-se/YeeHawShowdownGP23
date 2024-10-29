@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 public class OnSignalTurnEvent : MonoBehaviour
 {
@@ -14,7 +16,7 @@ public class OnSignalTurnEvent : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        StartCoroutine(triggerSignalRandomDelay());
+        StartCoroutine(triggerSignalRandomDelay()); ;
     }
 
     // Update is called once per frame
@@ -28,6 +30,7 @@ public class OnSignalTurnEvent : MonoBehaviour
             {
                 audioSource.PlayOneShot(signalSound);
             }
+            onSignalTriggerd.Invoke();
         }
     }
 }

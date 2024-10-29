@@ -6,18 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0632597f-4e31-4eee-af81-9825d02c0516" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.YeeHawShowdownGP23/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YeeHawShowdownGP23/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Asset Store/3D Models/Props/Weapons/DWm715 FPS Model/Prefabs/Bullet45.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Asset Store/3D Models/Props/Weapons/DWm715 FPS Model/Prefabs/Bullet45.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Player/Player.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/Player.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/GunPrefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/GunPrefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/GunSmoke.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/GunSmoke.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gun.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/Very Low_PipelineAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Very Low_PipelineAsset.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/onSignalTurnEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/onSignalTurnEvent.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +17,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.meta.xr.sdk.core@69.0.0/Editor/OVRProjectSetup/Tasks/Processors/OVRConfigurationTaskUpdaterSummary.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.meta.xr.sdk.core@69.0.0/Scripts/BuildingBlocks/ControllerButtonsMapperScripts/ControllerButtonsMapper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Countdown.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.meta.xr.sdk.interaction@69.0.0/Runtime/Scripts/Input/Hands/DataModifiers/SyntheticHand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.9.4/Editor/VisualScripting.Core/Reflection/Codebase.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -118,7 +106,7 @@
       <workItem from="1729855781765" duration="69000" />
       <workItem from="1730075170471" duration="3886000" />
       <workItem from="1730105776269" duration="10522000" />
-      <workItem from="1730189668822" duration="12363000" />
+      <workItem from="1730189668822" duration="15364000" />
     </task>
     <servers />
   </component>
