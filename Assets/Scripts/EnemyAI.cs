@@ -11,7 +11,9 @@ public class EnemyAI : MonoBehaviour
     private Vector3 _startPosition;   
     private bool _walkingAway = true; 
     private bool _hasShot = false;    
-    public Transform player;          
+    public Transform player;
+
+    public Gun enemyGun;
     
     private Animator animator;
     private void Start()
@@ -48,11 +50,13 @@ public class EnemyAI : MonoBehaviour
         if (_walkingAway)
         {
             _walkingAway = false;  // Stop walking
+            animator.SetBool("readyToShoot", true);
             if (!_hasShot)
             {
                 StartCoroutine(TurnAndShootCoroutine());
             }
         }
+        TurnAndShootCoroutine();
     }
 
     // Coroutine to smoothly turn and shoot after signal
@@ -77,7 +81,7 @@ public class EnemyAI : MonoBehaviour
         Vector3 aimError = new Vector3(Random.Range(-accuracyOffset, accuracyOffset), Random.Range(-accuracyOffset, accuracyOffset), 0);
         Vector3 fireDirection = (player.position + aimError - transform.position).normalized;
 
-        GetComponent<Gun>().EnemyShoot(fireDirection);
+        enemyGun.EnemyShoot(fireDirection);
 
         _hasShot = true; 
     }
